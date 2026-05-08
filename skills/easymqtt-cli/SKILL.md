@@ -142,6 +142,14 @@ Subscribe briefly:
 easymqtt subscribe --broker Home --topic "sensors/#" --duration 10
 ```
 
+For machine-readable subscription output:
+
+```bash
+easymqtt subscribe --broker Home --topic "sensors/#" --duration 10 --format json
+```
+
+`easymqtt subscribe --format json` emits one pretty-printed JSON object per message without NDJSON line framing. Do not parse it as one JSON object per line. Prefer bounded runs and either parse complete JSON object boundaries or summarize the captured output directly.
+
 Use manual broker details only when saved broker data is not available:
 
 ```bash
